@@ -14,18 +14,16 @@ import com.supercluster.cosmos.repository.CustomerRepository;
 @RestController
 public class CustomerController {
 
-	@Autowired
-	private CustomerRepository repository;
-	
-	@PostMapping("/createcustomer")
-	public void createCustomer(@RequestBody Customer customer)
-	{
-		repository.save(customer);
-	}
-	
-	@GetMapping("/getcustomers")
-	public List<Customer> getCustomer()
-	{
-		return repository.findAll();
-	}
+    @Autowired
+    private CustomerRepository repository;
+
+    @PostMapping("/createcustomer")
+    public void createCustomer(@RequestBody Customer customer) {
+        repository.save(customer);
+    }
+
+    @GetMapping("/getcustomers")
+    public List<Customer> getCustomer() {
+        return repository.findAll();
+    }
 }
